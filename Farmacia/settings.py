@@ -94,17 +94,17 @@ WSGI_APPLICATION = 'Farmacia.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'Farmacia.db',
-    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'farmagestor',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '1234xcox',
-    #     'HOST': 'localhost',
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'Farmacia.db',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'farmagestor',
+        'USER': 'postgres',
+        'PASSWORD': '1234xcox',
+        'HOST': 'localhost',
+    }
 }
 
 
