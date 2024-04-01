@@ -12,8 +12,6 @@ from openpyxl import Workbook
 
 # Create your views here.
 # Listar
-
-
 @permission_classes([IsAuthenticated])
 class SalesListView(APIView):
     def get(self, request):
@@ -24,8 +22,6 @@ class SalesListView(APIView):
         return Response(serializer.data)
 
 # Listar Filtrado
-
-
 @permission_classes([IsAuthenticated])
 class SalesFilterListView(APIView):
     def get(self, request):
@@ -37,8 +33,6 @@ class SalesFilterListView(APIView):
         return Response(serializer.data)
 
 # Obtener
-
-
 @permission_classes([IsAuthenticated])
 class SaleView(APIView):
     def get(self, request, id):
@@ -51,8 +45,6 @@ class SaleView(APIView):
         return Response(serializer.data)
 
 # Crear
-
-
 @permission_classes([IsAuthenticated])
 class CreateSaleView(APIView):
     def post(self, request):
@@ -69,8 +61,6 @@ class CreateSaleView(APIView):
             return Response({'Error': "No se puede realizar la venta"}, status=status.HTTP_400_BAD_REQUEST)
 
 # Editar
-
-
 @permission_classes([IsAuthenticated])
 class EditSaleView(APIView):
     def put(self, request, id):
@@ -86,7 +76,6 @@ class EditSaleView(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
 # Eliminar
 @permission_classes([IsAuthenticated])
 class DeleteSaleView(APIView):
@@ -100,8 +89,6 @@ class DeleteSaleView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 # Generar Reporte de Ventas
-
-
 class ReporteSaleExel(APIView):
     def get(self, request, *args, **kwargs):
         # Filtrar las ventas desde hace una semana hasta hoy
