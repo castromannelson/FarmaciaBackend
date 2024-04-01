@@ -37,6 +37,9 @@ class CreatePatientCardView(APIView):
    def post(self,request):
         serializer = PatientCardSerializer(data=request.data)
         if serializer.is_valid():
+            ci = serializer.validated_data.get('ci')
+            if len(ci) != 11:
+                return Response({'Error': 'Ci debe tener 11 Caracteres'}, status=status.HTTP_400_BAD_REQUEST)
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
