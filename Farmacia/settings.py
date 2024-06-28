@@ -102,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'farmagestor',
         'USER': 'postgres',
-        'PASSWORD': '1234xcox',
+        'PASSWORD': 'Dsjh5s45fsd',
         'HOST': 'localhost',
     }
 }
